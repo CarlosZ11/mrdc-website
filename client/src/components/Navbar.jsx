@@ -17,6 +17,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import { useAppStore } from "../appStore";
 import { useNavigate } from "react-router-dom";
+import logo from '../assets/IconoMRDC.png'
 
 const AppBar = styled(MuiAppBar)(({ theme }) => ({
   zIndex: theme.zIndex.drawer + 1,
@@ -181,6 +182,7 @@ export default function Navbar() {
           >
             <MenuIcon />
           </IconButton>
+          <img src={logo} alt="Logo" style={{marginRight: 6, height: 53 }} />
           <Typography
             variant="h6"
             noWrap
@@ -189,26 +191,19 @@ export default function Navbar() {
           >
             Ministerio el Reino de Dios Cuadrangular
           </Typography>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{
+              display: { xs: "block", sm: "none" }, // Mostrar en xs
+              fontSize: '1.2rem', // Tamaño en pantallas pequeñas
+            }}
+          >
+            MRDC
+          </Typography>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <IconButton
-              size="large"
-              aria-label="show 4 new mails"
-              color="inherit"
-            >
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
             <IconButton
               size="large"
               edge="end"
@@ -217,8 +212,9 @@ export default function Navbar() {
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
               color="inherit"
+              sx={{ fontSize: 35 }}
             >
-              <AccountCircle />
+              <AccountCircle sx={{ fontSize: 35 }}/>
             </IconButton>
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>

@@ -99,11 +99,12 @@ export default function Sidenav() {
                 minWidth: 0,
                 mr: open ? 3 : "auto",
                 justifyContent: "center",
+                color: "rgb(8, 0, 133)",
               }}
             >
               <HomeRoundedIcon />
             </ListItemIcon>
-            <ListItemText primary="Home" sx={{ opacity: open ? 1 : 0 }} />
+            <ListItemText primary="Inicio" sx={{ opacity: open ? 1 : 0 }} />
           </ListItemButton>
         </ListItem>
         <ListItem
@@ -125,6 +126,7 @@ export default function Sidenav() {
                 minWidth: 0,
                 mr: open ? 3 : "auto",
                 justifyContent: "center",
+                color: "rgb(8, 0, 133)",
               }}
             >
               <PeopleAltRoundedIcon />
@@ -151,6 +153,7 @@ export default function Sidenav() {
                 minWidth: 0,
                 mr: open ? 3 : "auto",
                 justifyContent: "center",
+                color: "rgb(8, 0, 133)",
               }}
             >
               <AccountBalanceRoundedIcon />
@@ -177,6 +180,7 @@ export default function Sidenav() {
                 minWidth: 0,
                 mr: open ? 3 : "auto",
                 justifyContent: "center",
+                color: "rgb(8, 0, 133)",
               }}
             >
               <MilitaryTechRoundedIcon />
@@ -203,6 +207,7 @@ export default function Sidenav() {
                 minWidth: 0,
                 mr: open ? 3 : "auto",
                 justifyContent: "center",
+                color: "rgb(8, 0, 133)",
               }}
             >
               <InventoryRoundedIcon />
@@ -229,6 +234,7 @@ export default function Sidenav() {
                 minWidth: 0,
                 mr: open ? 3 : "auto",
                 justifyContent: "center",
+                color: "rgb(8, 0, 133)",
               }}
             >
               <AssignmentIndRoundedIcon />
@@ -255,6 +261,7 @@ export default function Sidenav() {
                 minWidth: 0,
                 mr: open ? 3 : "auto",
                 justifyContent: "center",
+                color: "rgb(8, 0, 133)",
               }}
             >
               <SettingsRoundedIcon />
