@@ -7,6 +7,7 @@ import Analytics from "./pages/Analytics";
 import Settings from "./pages/Settings";
 import RegisterPage from './pages/auth/RegisterPage';
 import LoginPage from './pages/auth/LoginPage';
+import ProtectedRoute from './ProtectedRoute';
 
 
 export default function App() {
@@ -14,12 +15,16 @@ export default function App() {
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" exact element={<Home />}></Route>
           <Route path="/login" exact element={<LoginPage/>}></Route>
           <Route path="/register" exact element={<RegisterPage/>}></Route>
-          <Route path="/products" exact element={<Products />}></Route>
+
+        <Route element={<ProtectedRoute/>}>
+          <Route path="/" exact element={<Home />}></Route>
+          <Route path="/products"  element={<Products />}></Route>
           <Route path="/analytics" exact element={<Analytics />}></Route>
           <Route path="/settings" exact element={<Settings />}></Route>
+        </Route>
+
         </Routes>
       </BrowserRouter>
     </AuthProvider>
