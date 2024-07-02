@@ -138,7 +138,7 @@ export default function Sidenav() {
           disablePadding
           sx={{ display: "block" }}
           onClick={() => {
-            navigate("/analytics");
+            navigate("/ministries");
           }}
         >
           <ListItemButton
@@ -165,7 +165,7 @@ export default function Sidenav() {
           disablePadding
           sx={{ display: "block" }}
           onClick={() => {
-            navigate("/settings");
+            navigate("/service-areas");
           }}
         >
           <ListItemButton

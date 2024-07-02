@@ -8,6 +8,9 @@ import Settings from "./pages/Settings";
 import RegisterPage from './pages/auth/RegisterPage';
 import LoginPage from './pages/auth/LoginPage';
 import ProtectedRoute from './ProtectedRoute';
+import MembersPage from './pages/members/MembersPage';
+import MinistriesPage from './pages/ministries/MinistriesPage';
+import ServiceAreasPage from './pages/ServiceAreas/ServiceAreasPage';
 
 
 export default function App() {
@@ -20,7 +23,10 @@ export default function App() {
 
         <Route element={<ProtectedRoute/>}>
           <Route path="/" exact element={<Home />}></Route>
-          <Route path="/members"  element={<Members />}></Route>
+          <Route path="/membe"  element={<Members />}></Route>
+          <Route path="/members"  element={<MembersPage />}></Route>
+          <Route path="/ministries"  element={<MinistriesPage />}></Route>
+          <Route path="/service-areas"  element={<ServiceAreasPage />}></Route>
           <Route path="/analytics" exact element={<Analytics />}></Route>
           <Route path="/settings" exact element={<Settings />}></Route>
         </Route>
