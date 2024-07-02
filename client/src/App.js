@@ -2,7 +2,7 @@ import React from 'react';
 import {Routes, Route, BrowserRouter} from "react-router-dom";
 import { AuthProvider } from './context/AuthContext';
 import Home from "./pages/Home";
-import Products from "./pages/Products";
+import Members from "./pages/Members";
 import Analytics from "./pages/Analytics";
 import Settings from "./pages/Settings";
 import RegisterPage from './pages/auth/RegisterPage';
@@ -20,7 +20,7 @@ export default function App() {
 
         <Route element={<ProtectedRoute/>}>
           <Route path="/" exact element={<Home />}></Route>
-          <Route path="/products"  element={<Products />}></Route>
+          <Route path="/members"  element={<Members />}></Route>
           <Route path="/analytics" exact element={<Analytics />}></Route>
           <Route path="/settings" exact element={<Settings />}></Route>
         </Route>

@@ -2,9 +2,9 @@ import React from "react";
 import Sidenav from "../components/Sidenav";
 import Box from "@mui/material/Box";
 import Navbar from "../components/Navbar";
-import ProductsList from "../products/ProductsList";
+import MembersList from "../members/MembersList";
 
-export default function Products() {
+export default function Members() {
   return (
     <>
       <div className="bgcolor">
@@ -13,7 +13,7 @@ export default function Products() {
         <Box sx={{ display: "flex" }}>
           <Sidenav />
           <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-            <ProductsList />
+            <MembersList />
           </Box>
         </Box>
       </div>
