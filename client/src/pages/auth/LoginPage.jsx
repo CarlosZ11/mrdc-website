@@ -15,10 +15,10 @@ function LoginPage() {
 
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   if (isAuthenticated) navigate("/");
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [isAuthenticated]);
+  useEffect(() => {
+    if (isAuthenticated) navigate("/");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isAuthenticated]);
 
   const onSubmit = handleSubmit((data) => {
     signin(data);

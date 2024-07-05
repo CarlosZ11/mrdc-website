@@ -2,8 +2,7 @@ import React from "react";
 import Sidenav from "../../components/Sidenav";
 import Box from "@mui/material/Box";
 import Navbar from "../../components/Navbar";
-import MemberFormPage from "./MemberFormPage";
-import MembersListPage from "./MemberListPage";
+import List from "../../pages/members/List";
 
 
 function MembersPage() {
@@ -15,7 +14,7 @@ function MembersPage() {
         <Box sx={{ display: "flex" }}>
           <Sidenav />
           <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-            <MembersListPage />
+            <List />
           </Box>
         </Box>
       </div>

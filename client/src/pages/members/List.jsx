@@ -6,14 +6,9 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
-import Stack from "@mui/material/Stack";
 import CardContent from "@mui/material/CardContent";
-import Profile from "./Profile";
-import Password from "./Password";
-import Account from "./Account";
-import Personal from "./Personal";
-import MembersListPage from "../pages/members/MemberListPage";
-import MemberFormPage from "../pages/members/MemberFormPage";
+import MembersListPage from "./MemberListPage";
+import MemberFormPage from "./MemberFormPage";
 
 const StyledTabs = styled((props) => (
   <Tabs
@@ -101,8 +96,8 @@ export default function List() {
                 onChange={handleChange}
                 aria-label="styled tabs example"
               >
-                <StyledTab label="Lista Miembros" {...a11yProps(0)} />
-                <StyledTab label="Registro Miembro" {...a11yProps(1)} />
+                <StyledTab label="Lista" {...a11yProps(0)} />
+                <StyledTab label="Registro" {...a11yProps(1)} />
                 <StyledTab label="My Account" {...a11yProps(2)} />
                 <StyledTab label="Change Password" {...a11yProps(3)} />
               </StyledTabs>
@@ -113,12 +108,7 @@ export default function List() {
             <TabPanel value={value} index={1}>
               <MemberFormPage />
             </TabPanel>
-            <TabPanel value={value} index={2}>
-              <Account />
-            </TabPanel>
-            <TabPanel value={value} index={3}>
-              <Password />
-            </TabPanel>
+
           </Box>
         </CardContent>
       </Card>
