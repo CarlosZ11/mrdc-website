@@ -24,7 +24,7 @@ export const createMemberSchema = z.object({
   }),
   birthDate: z.string({
     required_error: "Birth date is required",
-  }).datetime(),
+  }).datetime().optional(),
   gender: z.string({
     required_error: "Gender is required",
   }),
@@ -36,18 +36,16 @@ export const createMemberSchema = z.object({
   }),
   startYearChurch: z.string({
     required_error: "Start year in church is required",
-  }),
-  isBaptized: z.boolean({
+  }).datetime().optional(),
+  isBaptized: z.string({
     required_error: "Baptism status is required",
   }),
   baptismDate: z.string().datetime().optional(),
-  isServer: z.boolean({
+  isServer: z.string({
     required_error: "Server status is required",
   }),
   ministry: z.string({
     required_error: "Ministry is required",
   }),
-  serviceArea: z.string({
-    required_error: "Service area is required",
-  }),
+  serviceArea: z.array(z.string()).optional(),
 });

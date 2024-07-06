@@ -17,7 +17,10 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import { useAppStore } from "../appStore";
 import { useNavigate } from "react-router-dom";
-import logo from '../assets/IconoMRDC.png'
+import logo from "../assets/IconoMRDC.png";
+import { useAuth } from "../context/AuthContext";
+import Button from "@mui/material/Button";
+import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
 
 const AppBar = styled(MuiAppBar)(({ theme }) => ({
   zIndex: theme.zIndex.drawer + 1,
@@ -63,6 +66,21 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+const logoutButtonStyle = {
+  fontFamily: "Roboto, sans-serif",
+  fontSize: "0.8rem",
+  textTransform: "none",
+  marginLeft: "16px",
+  borderRadius: "4px",
+  padding: "3px 15px",
+  boxShadow: "none",
+  backgroundColor: "#3f51b5",
+  color: "#ffffff",
+  "&:hover": {
+    backgroundColor: "#2f3b4d",
+  },
+};
+
 export default function Navbar() {
   const updateDopen = useAppStore((state) => state.updateDopen);
   const dopen = useAppStore((state) => state.dopen);
@@ -71,6 +89,7 @@ export default function Navbar() {
   const navigate = useNavigate();
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+  const { isAuthenticated, logout, user } = useAuth();
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -182,7 +201,7 @@ export default function Navbar() {
           >
             <MenuIcon />
           </IconButton>
-          <img src={logo} alt="Logo" style={{marginRight: 6, height: 53 }} />
+          <img src={logo} alt="Logo" style={{ marginRight: 6, height: 53 }} />
           <Typography
             variant="h6"
             noWrap
@@ -197,12 +216,22 @@ export default function Navbar() {
             component="div"
             sx={{
               display: { xs: "block", sm: "none" }, // Mostrar en xs
-              fontSize: '1.2rem', // Tamaño en pantallas pequeñas
+              fontSize: "1.2rem", // Tamaño en pantallas pequeñas
             }}
           >
             MRDC
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
+          <Typography
+            variant="body1"
+            sx={{
+              display: { xs: "none", md: "block" },
+              alignSelf: "center",
+              fontWeight: "500",
+            }}
+          >
+            {user.username}
+          </Typography>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
               size="large"
@@ -214,9 +243,19 @@ export default function Navbar() {
               color="inherit"
               sx={{ fontSize: 35 }}
             >
-              <AccountCircle sx={{ fontSize: 35 }}/>
+              <AccountCircle sx={{ fontSize: 35 }} />
             </IconButton>
           </Box>
+          <Button
+            variant="contained"
+            color="primary"
+            endIcon={<LogoutRoundedIcon />} // Icono de cerrar sesión
+            style={logoutButtonStyle}
+            to="/"
+            onClick={() => {logout()}}
+          >
+            Cerrar Sesión
+          </Button>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"

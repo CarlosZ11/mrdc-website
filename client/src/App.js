@@ -1,6 +1,7 @@
 import React from 'react';
 import {Routes, Route, BrowserRouter} from "react-router-dom";
 import { AuthProvider } from './context/AuthContext';
+import { MemberProvider } from './context/MemberContext';
 import Home from "./pages/Home";
 import Members from "./pages/Members";
 import Analytics from "./pages/Analytics";
@@ -16,23 +17,25 @@ import ServiceAreasPage from './pages/ServiceAreas/ServiceAreasPage';
 export default function App() {
   return (
     <AuthProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/login" exact element={<LoginPage/>}></Route>
-          <Route path="/register" exact element={<RegisterPage/>}></Route>
+      <MemberProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/login" exact element={<LoginPage/>}></Route>
+            <Route path="/register" exact element={<RegisterPage/>}></Route>
 
-        <Route element={<ProtectedRoute/>}>
-          <Route path="/" exact element={<Home />}></Route>
-          <Route path="/membe"  element={<Members />}></Route>
-          <Route path="/members"  element={<MembersPage />}></Route>
-          <Route path="/ministries"  element={<MinistriesPage />}></Route>
-          <Route path="/service-areas"  element={<ServiceAreasPage />}></Route>
-          <Route path="/analytics" exact element={<Analytics />}></Route>
-          <Route path="/settings" exact element={<Settings />}></Route>
-        </Route>
+          <Route element={<ProtectedRoute/>}>
+            <Route path="/" exact element={<Home />}></Route>
+            <Route path="/membe"  element={<Members />}></Route>
+            <Route path="/members"  element={<MembersPage />}></Route>
+            <Route path="/ministries"  element={<MinistriesPage />}></Route>
+            <Route path="/service-areas"  element={<ServiceAreasPage />}></Route>
+            <Route path="/analytics" exact element={<Analytics />}></Route>
+            <Route path="/settings" exact element={<Settings />}></Route>
+          </Route>
 
-        </Routes>
-      </BrowserRouter>
+          </Routes>
+        </BrowserRouter>
+      </MemberProvider>
     </AuthProvider>
   )
 }

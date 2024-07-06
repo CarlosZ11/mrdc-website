@@ -12,17 +12,17 @@ function LoginPage() {
   } = useForm();
 
   const { signin, errors: signinErrors, isAuthenticated } = useAuth();
-
   const navigate = useNavigate();
+
+  const onSubmit = handleSubmit((data) => {
+    signin(data);
+  });
 
   useEffect(() => {
     if (isAuthenticated) navigate("/");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated]);
 
-  const onSubmit = handleSubmit((data) => {
-    signin(data);
-  });
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">

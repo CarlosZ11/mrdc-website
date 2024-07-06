@@ -14,6 +14,9 @@ const memberSchema = new mongoose.Schema({
     type: String, 
     required: true 
   },
+  age:{
+    type: Number,
+  },
   email: { 
     type: String, 
     required: true, 
@@ -40,18 +43,18 @@ const memberSchema = new mongoose.Schema({
     required: true 
   },
   startYearChurch: { 
-    type: String, 
+    type: Date, 
     required: true 
   },
   isBaptized: { 
-    type: Boolean, 
+    type: String, 
     required: true 
   },
   baptismDate: { 
     type: Date 
   },
   isServer: { 
-    type: Boolean, 
+    type: String, 
     required: true 
   },
   ministry: { 
@@ -59,7 +62,7 @@ const memberSchema = new mongoose.Schema({
     required: true 
   },
   serviceArea: { 
-    type: String,
+    type: Array,
     required: true
   },
 }, {
